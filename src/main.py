@@ -1,10 +1,12 @@
-from config import Configuration
 from rammerhead import RammerheadProxy
 
-def main():
-    config = Configuration()
-    rammerhead = RammerheadProxy(config.get_rammerhead_config())
+def start_proxy():
+    config = {
+        'PROXY_HOST': 'localhost',
+        'PROXY_PORT': 8080,
+    }
+    rammerhead = RammerheadProxy(config)
     rammerhead.start()
 
 if __name__ == "__main__":
-    main()
+    start_proxy()
