@@ -3,15 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord API Interface</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login with Discord</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2C2F33;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #loginBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #7289DA;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #loginBtn:hover {
+            background-color: #5B6EAE;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Discord API Interface</h1>
-        <button id="loginBtn">Login with Discord</button>
-        <div id="userInfo"></div>
-    </div>
-    <script src="app.js"></script>
+    <button id="loginBtn">Login with Discord</button>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const clientId = '1289712943277150238'; // Replace with your Client ID
+            const redirectUri = 'https://mochaharpy.github.io/rammerhead-proxy/'; // Replace with your Redirect URI
+            const scope = 'identify email';
+            const responseType = 'token';
+
+            const discordOAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${scope}`;
+            
+            window.location.href = discordOAuthUrl; // Redirect to Discord for login
+        });
+    </script>
 </body>
 </html>
