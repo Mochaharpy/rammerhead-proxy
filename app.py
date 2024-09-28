@@ -1,6 +1,6 @@
 document.getElementById('loginBtn').addEventListener('click', function() {
-    const clientId = 'YOUR_DISCORD_CLIENT_ID'; // Replace with your Discord application client ID
-    const redirectUri = 'YOUR_REDIRECT_URI'; // Set this to the URL of your hosted page
+    const clientId = '1289712943277150238'; // Replace with your Discord application client ID
+    const redirectUri = 'https://mochaharpy.github.io/rammerhead-proxy/'; // Set this to the URL of your hosted page
     const scope = 'identify email';
     const responseType = 'token';
 
